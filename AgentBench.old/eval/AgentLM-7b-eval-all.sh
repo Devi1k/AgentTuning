@@ -10,10 +10,10 @@ export SPLIT='std'
 bash eval/single-task/alfworld.sh
 bash eval/single-task/webshop.sh
 bash eval/single-task/mind2web.sh
-bash eval/single-task/kg.sh
-bash eval/single-task/db.sh
-bash eval/single-task/os.sh
+# bash eval/single-task/kg.sh
+# bash eval/single-task/db.sh
+# bash eval/single-task/os.sh
 
-# # For Held-out task
-export SPLIT='ext'
-bash eval/single-task/card.sh
+# # # For Held-out task
+# export SPLIT='ext'
+# bash eval/single-task/card.sh
