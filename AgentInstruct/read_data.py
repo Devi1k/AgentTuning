@@ -2,9 +2,10 @@ import json
 import random
 # 需要安装: pip install langdetect
 from langdetect import detect, LangDetectException
+import tqdm
 
 # 1. 配置路径
-input_file = "ShareGPT_V3_unfiltered_cleaned_split.json"
+input_file = "AgentInstruct\\ShareGPT_V3_unfiltered_cleaned_split.json"
 output_file = "my_reproduction_general_data.json"
 TARGET_COUNT = 4532  # 根据之前计算得到的 N_general
 
@@ -19,7 +20,7 @@ print(f"原始数据总量: {len(data)}")
 english_conversations = []
 
 print("正在过滤非英语对话 (这可能需要几分钟)...")
-for conv in data:
+for conv in tqdm.tqdm(data):
     # ShareGPT 的格式通常是 [{"from": "human", "value": "..."}]
     # 我们通常检测第一句或第二句来判断语言
     try:
